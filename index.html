@@ -15,7 +15,11 @@
       background: #fff;
       color: #111;
     }
-
+body.dark {
+    background: #111;
+    color: #eee;
+}
+    
     img {
       max-width: 100%;
       height: auto;
@@ -39,7 +43,7 @@ pre {
             <button id="theme">dawn theme</button>
             <script>
                 document.getElementById('theme').addEventListener('click', () => {
-                    document.body.classlist.toggle('dark');
+                    document.body.classList.toggle('dark');
                 } ) ;
             </script>
             
