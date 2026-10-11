@@ -1,0 +1,57 @@
+
+
+ label {
+    width:150px;
+    height:60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-color: #aa555584;
+    border-radius: 200px;
+    box-sizing: border-box;
+    box-shadow: inset 0px 5px 15px #24030cba, inset 0px -5px 15px #840c32c5;
+    cursor: pointer;
+    transition: 0.3s;
+ }
+
+ .icon-sun,
+.icon-moon {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+    flex-shrink: 0;
+}
+
+ 
+ label::after {
+    content: '';
+    width: 45px;
+    height: 45px;
+    position:absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg,hsla(28, 45%, 72%, 0.624),hwb(343 14% 19% / 0.657));
+    border-radius: 90px;
+    box-shadow: 0px 5px 10px rgba(138, 37, 37, 0.279);
+    transition: 0.3s;
+    z-index: 0;
+ }
+
+ input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.theme.theme--on::after {
+    left: calc(100% - 8px);
+    transform: translateY(-50%) translateX(-100%);
+    background: linear-gradient(180deg, #64222fb2, #530436);
+}
+
+label:active::after{
+    width: 60px;
+}

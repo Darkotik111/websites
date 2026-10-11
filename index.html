@@ -1,64 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <title>Early sunsets over Monroeville</title>
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
-  <title>Early sunsets over Monroeville</title>
-
-  <style>
-    body {
+        <title>Early sunsets over Monroeville</title>
+        
+<link rel="stylesheet" href="light-dark.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+     
+     <style>
+        body {
       max-width: 700px;
       margin: 0 auto;
       padding: 20px;
-      font-family: Georgia, serif;
+      font-family: "Lugrasimo", cursive;
       text-align: center;
-      background: #fff;
-      color: #111;
-    }
-body.dark {
-    background: #111;
-    color: #eee;
-}
+      justify-content: center;
+      background: #dfa3b9;
+      color: #5d2020;
+     }
+     body.dark {
+     background: #111;
+     color: #925a5a;
+     }
     
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+     img {
+    max-width: 100%;
+    height: auto;
+}
 
-    hr {
+     hr {
       border: none;
-      border-top: 1px solid #ccc;
+      border-top: 2px solid #562e2e;
       margin: 20px 0;
-    }
-pre {
-    line height: 1.9;
         }
-    a {
-      color: #0366d6;
-    }
-  </style>
+      pre {
+        font-family: "Lugrasimo", cursive;
+        font-size:x-large;
+        line-height: 1.9;
+        text-align: left;
         
+      }
+      a {
+      color: #762c2b;
+        }
+      </style>
+    </head>
         <body>
-
-            <button id="theme">dawn theme</button>
-            <script>
-                document.getElementById('theme').addEventListener('click', () => {
-                    document.body.classList.toggle('dark');
-                } ) ;
-            </script>
-            
-        <h1>Early sunsets over Monroeville</h1>
+            <div class="theme-switch">
+               <label for="theme" class="theme">
+                <svg class="icon-sun" width="30px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 22H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 19H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 16H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 6C8.68629 6 6 8.68629 6 12C6 13.5217 6.56645 14.911 7.5 15.9687H16.5C17.4335 14.911 18 13.5217 18 12C18 8.68629 15.3137 6 12 6Z" stroke="currentColor" stroke-width="1.5"/>
+<path d="M12 2V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M22 12L21 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M3 12L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M19.0708 4.92969L18.678 5.32252" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M5.32178 5.32227L4.92894 4.92943" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+<input id="theme" class="theme_toggle" type="checkbox" role="switch" name="theme" value="dark">
+              
+                 <svg class="icon-moon" width="30px" height="40px" fill=currentColor viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path  d="M384 512a448 448 0 0 1 215.872-383.296A384 384 0 0 0 213.76 640h188.8A448.256 448.256 0 0 1 384 512zM171.136 704a448 448 0 0 1 636.992-575.296A384 384 0 0 0 499.328 704h-328.32z"/><path d="M32 640h960q32 0 32 32t-32 32H32q-32 0-32-32t32-32zm128 128h384a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64zm160 127.68 224 .256a32 32 0 0 1 32 32V928a32 32 0 0 1-32 32l-224-.384a32 32 0 0 1-32-32v-.064a32 32 0 0 1 32-32z"/></svg>
+                 </label>
+            </div>
+          <h1>Early sunsets over Monroeville</h1>
        
-        <h4>Song by My Chemical Romance</h4>
-        <a href="https://www.youtube.com/watch?v=fOLfblOB2e8"><img src="sunsets.jpg"
-        height="300"></a> <br>
-        <a href="">original video</a>
-        <hr>
-        <br>
-        <audio controls>
+          <h4>Song by My Chemical Romance</h4>
+           <a href="https://www.youtube.com/watch?v=fOLfblOB2e8"><img src="sunsets.jpg"
+            height="300"></a> <br>
+           <a href="">original video</a>
+           <hr>
+           <br>
+            <audio controls>
             <source src="song.mp3"> </audio>
 
-        <pre>
+           <pre>
 Late dawns and early sunsets
 Just like my favorite scenes
 Then holding hands, and life was perfect
@@ -106,6 +125,14 @@ But does anyone notice there's a corpse in this bed?</pre>
 <a href="mailto:harriefollowlouis67@gmail.com"> 
     email me 
 </a>
-    </body>
-    </head>
+<script>
+               const themeCheckbox = document.getElementById('theme');
+const themeLabel = document.querySelector('.theme');
+
+themeCheckbox.addEventListener('change', () => {
+    document.body.classList.toggle('dark', themeCheckbox.checked);
+    themeLabel.classList.toggle('theme--on', themeCheckbox.checked);
+});
+            </script>
+        </body>
 </html>
